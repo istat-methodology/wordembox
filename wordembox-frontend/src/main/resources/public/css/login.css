@@ -1,0 +1,94 @@
+/* 
+    Created on : 2-gen-2017, 17.08.03
+    Author     : mbruno
+*/
+body {
+    min-height: 100%;
+    font-family: Source Sans Pro,sans-serif;
+    color: #555;
+    background-color: #f5f7fa;
+}
+body, html {
+    height: 100%;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+a {
+    outline: none!important;
+}
+.wd-xl {
+    width: 320px;
+}
+.block-center {
+    margin: 0 auto;
+}
+.mt-xl {
+    margin-top: 30px!important;
+}
+.mb-lg {
+    margin-bottom: 15px!important;
+}
+.p-lg {
+    padding: 15px!important;
+}
+.mt-lg {
+    margin-top: 15px!important;
+}
+.panel{
+    box-shadow: none;
+}
+
+.panel-body{
+    border-bottom: 1px solid #e6e0e0;
+    border-left: 1px solid #e6e0e0;
+    border-right: 1px solid #e6e0e0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.panel-flat {
+    margin: 0!important;
+    border: 0;
+}
+.panel-dark {
+    border-color: #cfdbe2;
+}
+.panel-dark>.panel-heading {
+    background-color: #34788c!important;
+    font-size: 16pt!important;
+    color: #fff;
+}
+.panel .panel-heading a {
+    text-decoration: none!important;
+}
+.panel-dark>.panel-heading a {
+    color: white!important;
+}
+
+.form-control {
+    box-shadow: 0 0 0 #000!important;
+}
+
+.form-control+.form-control-feedback{
+    right: 0;
+    left: auto;
+    padding: 9px;
+}
+
+.btn {
+    border-radius: 3px;
+    font-size: 14px;
+    border-color: transparent;
+    -webkit-appearance: none;
+    outline: none!important;
+    -webkit-transition: all .1s;
+    transition: all .1s;
+}
+.btn-primary {
+    background-color: #34788c!important;
+}

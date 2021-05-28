@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<head th:include="layout :: site-head" th:remove="tag" />
+<meta name="ctx" th:content="${#httpServletRequest.getContextPath()}" />
+<script th:src="@{/js/webox.js}"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+	    	$("#analogie").parent().addClass("active");
+        });
+</script>
+
+<script th:inline="javascript">
+        var _pythonServer = [[${pythonServer}]];
+</script>
+
+<script th:src="@{/js/table/datatables.js}"></script>
+<link rel="stylesheet" th:href="@{/css/table/datatables.css}" />
+</head>
+<body>
+	<!-- Body -->
+	<div class="wrapper">
+		<header th:replace="layout :: site-header" />
+		<!-- START MAIN CONTAINER -->
+		<section>
+			<div class="content-wrapper">
+				<div class="container-fluid ">
+					<div class="row">
+						<div class="col-lg-12">
+							<fieldset class="well ">
+								<legend class="well-legend secondary-fieldset">
+									<span>Inserici Analogie</span>
+								</legend>
+								<div class="row">
+									<div class="col-lg-2">
+										<label> <strong>Numero Parole</strong> <input
+											class="form-control numeric" name="np" id="np_a"
+											type="number" style="width: 80%" pattern="[0-9]{3}"
+											value="10" min="1" max="99" maxlength="2" />
+										</label>
+									</div>
+									<div class="col-lg-7">
+										<div class="row">
+											<div class="col-lg-3">
+												<label> <strong>Parola1</strong> <input
+													class="form-control" type="text" name="text1" id="text1"
+													size="50" placeholder="re" />
+												</label>
+											</div>
+											<div class="col-lg-1 col-lg-1-1 move-down">
+												<strong>:</strong>
+											</div>
+											<div class="col-lg-3">
+												<label> <strong>Parola2</strong> <input
+													class="form-control" type="text" name="text2" id="text2"
+													size="50" placeholder="regina" />
+												</label>
+											</div>
+											<div class="col-lg-1 col-lg-1-1 move-down">
+												<strong>=</strong>
+											</div>
+											<div class="col-lg-3">
+												<label> <strong>Parola3</strong> <input
+													class="form-control" type="text" name="text3" id="text3"
+													size="50" placeholder="uomo" />
+												</label>
+											</div>
+											<div class="col-lg-1 col-lg-1-1 move-down">
+												<strong>:</strong>
+											</div>
+											<div class="col-lg-1 col-lg-1-1  move-down h4">
+												<strong>?</strong>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3">
+
+										<a
+											class="btn btn-primary btn-trasparent suggest   move-down15  suggest_an"
+											id="button_suggest_an" title="Suggerisci"> <i
+											class="fa fa-lightbulb-o fa-2x" aria-hidden="true"></i>
+										</a>
+										<button class="btn btn-primary  btn-sm  move-down15 "
+											id="button_a">
+											<i class="fa fa-paper-plane-o"></i>&nbsp; Invia
+										</button>
+										&nbsp;
+										<button class="btn btn-secondary move-down15  btn-sm"
+											id="btn_cancella_an">
+											<i class="fa fa-eraser"></i> &nbsp;Ripulisci
+										</button>
+
+									</div>
+								</div>
+
+							</fieldset>
+						</div>
+					</div>
+					<div class="row">
+
+						<div class="col-lg-6">
+							<fieldset class="well ">
+								<legend class="well-legend secondary-fieldset">
+									<span>Lista Analogie</span>
+								</legend>
+								<div id="resp_a"></div>
+							</fieldset>
+						</div>
+						<div class="col-lg-1"></div>
+						<div class="col-lg-5">
+							<fieldset class="well ">
+								<legend class="well-legend secondary-fieldset">
+									<span>Analogie - Come fare...</span>
+								</legend>
+								<div>
+									<h4 class="suggest">Completa l&#39;analogia</h4>
+									<p>
+										Inserisci nelle tre caselle di testo le parole che
+										costruiscono un&#39;analogia, oppure seleziona il suggerimento
+										<i class="fa fa-lightbulb-o fa-1x" aria-hidden="true"></i>, e
+										premi il tasto <i>Invia</i> <i class="fa fa-paper-plane-o"></i>.<br />
+										Verr&agrave; visualizzata la lista delle Analogie trovate.
+									</p>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END MAIN CONTAINER -->
+		<footer th:replace="layout :: site-footer" />
+	</div>
+	<!-- wrapper -->
+</body>
+</html>

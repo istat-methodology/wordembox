@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<head th:include="layout :: site-head" th:remove="tag" />
+
+<script th:inline="javascript">
+var _pythonServer = [[${pythonServer}]];
+      
+ 
+ </script>
+<script type="text/javascript">
+        $(document).ready(function () {
+	    	$("#grafi").parent().addClass("active");
+        });
+</script>
+
+<script th:src="@{/js/style.js}"></script>
+<script th:src="@{/js/layout.js}"></script>
+<script th:src="@{/js/cytoscape.js}"></script>
+<script th:src="@{/js/cytoscape-panzoom.js}"></script>
+<script th:src="@{/js/code.js}"></script>
+<script th:src="@{/js/webox.js}"></script>
+
+<script type="text/javascript" th:inline="javascript">
+        var _ctx = $("meta[name='ctx']").attr("content");
+</script>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link th:href="@{/css/cytoscape.js-panzoom.css}" rel="stylesheet" />
+</head>
+<body>
+	<div class="wrapper">
+		<header th:replace="layout :: site-header" />
+
+		<section>
+			<div class="content-wrapper">
+				<div class="container-fluid">
+					<fieldset class="well ">
+						<legend class="well-legend ">
+							<span>Grafi</span>
+						</legend>
+						<div class="col-lg-2">
+							<div id="cmd">
+								<label class="form-group">Width: <input
+									class="form-control numeric" type="number" name="width"
+									value="4" maxlength="2" size="2" min="1" max="99" id="width" />
+								</label> <br /> <br /> <label class="form-group">Iterations: <input
+									class="form-control numeric" type="number" name="iterations"
+									value="3" min="1" max="99" id="iterations" />
+								</label> <br /> <br /> <label class="form-group">Mode: <select
+									class="form-control" name="modo" id="modo">
+										<option class="form-control" value="GEO">GEO</option>
+										<option class="form-control" value="LINEAR">LINEAR</option>
+										<option class="form-control" value="GEO_ORIENT">GEO_ORIENT</option>
+								</select>
+								</label> <br /> <br /> <label class="form-group">Words: <input
+									class="form-control " type="text" name="text" id="words"
+									value="istat" />
+								</label> <br /> <br /> <label class="form-group">Layout: <select
+									class="form-control" name="layout" id="select-layout">
+										<option class="form-control" value="0">breadthfirst</option>
+										<option class="form-control" value="1">circle</option>
+										<option class="form-control" value="2">concentric</option>
+										<option class="form-control" value="3" selected="selected">cose</option>
+										<!--option  class="form-control" value="4">grid</option>
+                                        <option  class="form-control" value="5">preset</option>
+                                        <option  class="form-control" value="6">random</option-->
+								</select>
+								</label> <br /> <br />
+								<button class="btn btn-primary  btn-sm" id="target">
+									<i class="fa fa-paper-plane-o"></i>&nbsp; Invia
+								</button>
+								&nbsp;
+								<button class="btn btn-secondary   btn-sm"
+									id="btn_cancella_graph">
+									<i class="fa fa-eraser"></i> &nbsp;Ripulisci
+								</button>
+
+							</div>
+						</div>
+						<div class="col-lg-10 well" id="cy"></div>
+					</fieldset>
+				</div>
+			</div>
+		</section>
+		<!-- END MAIN CONTAINER -->
+		<footer th:replace="layout :: site-footer" />
+	</div>
+
+
+
+</body>
+</html>

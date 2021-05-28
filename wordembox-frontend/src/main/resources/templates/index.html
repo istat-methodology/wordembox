@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<head th:include="layout :: site-head" th:remove="tag" />
+
+<meta name="ctx" th:content="${#httpServletRequest.getContextPath()}" />
+
+<script th:src="@{/js/webox.js}"></script>
+
+</head>
+<BODY>
+	<!-- Body -->
+	<div class="wrapper">
+		<header th:replace="layout :: site-header" />
+
+		<!-- START MAIN CONTAINER -->
+		<section>
+			<div class="content-wrapper">
+				<div class="container-fluid ">
+
+					<div class="row text-center">
+						<div class="col-lg-3"></div>
+						<div class="col-lg-6 ">
+							<h1 class="display-1">
+								<i class="fa fa-comments fa-1x"></i><strong>WordEmBox</strong>
+							</h1>
+						</div>
+						<div class="col-lg-3"></div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2 "></div>
+						<div class="col-lg-8">
+							<div class="col-lg-4">
+								<div class="card card-grafi">
+									<div class="row">
+										<img class="card img-fluid img-responsive"
+											th:src="@{/images/Card-grafo-200.png}" alt="Card image cap" />
+									</div>
+
+									<div class="card-body">
+										<div class="row">
+											<h3 class="card-title">Grafi</h3>
+											<p class="card-text">Visualizza in due dimensioni il
+												modello word embedding partendo da una o pi&ugrave; parole
+												seme che determinano l'area semantica che si vuole
+												esplorare.</p>
+										</div>
+										<div class="row card-btn">
+											<a id="grafi" class="btn btn-primary" href="index.html"
+												title="Grafi" th:href="@{/graph}"> Vai </a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4">
+								<div class="card card-affinita">
+									<div class="row">
+										<img class="card img-fluid img-responsive"
+											th:src="@{/images/Card-affinita-200.png}"
+											alt="Affinit&agrave;" />
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<h3 class="card-title">Affinit&agrave;</h3>
+											<p class="card-text">Restituisce, partendo da una o
+												pi&ugrave; parole, l'elenco di parole ad esse pi&ugrave;
+												vicine da un punto di vista sintattico o semantico secondo
+												la loro vicinanza nello spazio di embedding.</p>
+										</div>
+										<div class="row card-btn">
+											<a id="grafi" class="btn btn-primary" href="index.html"
+												title="Affinit&agrave;" th:href="@{/distance}"> Vai </a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4">
+								<div class="card card-analogie">
+									<div class="row">
+										<img class="card img-fluid img-responsive"
+											th:src="@{/images/Card-analogia-200.png}"
+											alt="Analogie" />
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<h3 class="card-title">Analogie</h3>
+											<p class="card-text">Inserendo due parole legate tra loro
+												da una relazione, e una terza alla quale si vuole venga
+												applicata la stessa relazione, il modello restituisce
+												l'elenco di parole che completano l'analogia proposta.</p>
+										</div>
+										<div class="row card-btn">
+											<a id="grafi" class="btn btn-primary " href="index.html"
+												title="Analogie" th:href="@{/analogy}"> Vai </a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2"></div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- END MAIN CONTAINER -->
+		<footer th:replace="layout :: site-footer" />
+	</div>
+	<!-- wrapper -->
+</BODY>
+</html>

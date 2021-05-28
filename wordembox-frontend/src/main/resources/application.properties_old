@@ -1,0 +1,9 @@
+server.contextPath=/graphservice
+server.port= 8080
+
+spring.config.name= graphservice
+spring.application.name= graphservice
+spring.jmx.default-domain= graphservice 
+
+eureka.client.serviceUrl.defaultZone= http://mec-svil:8080/mecregisterservice/eureka/
+eureka.instance.leaseRenewalIntervalInSeconds= 5 

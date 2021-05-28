@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<head th:include="layout :: site-head" th:remove="tag" />
+<script th:inline="javascript">
+        var _pythonServer = [[${pythonServer}]];
+
+
+    </script>
+<script type="text/javascript">
+        $(document).ready(function () {
+	    	$("#distance").parent().addClass("active");
+        });
+</script>
+<meta name="ctx" th:content="${#httpServletRequest.getContextPath()}" />
+
+<script th:src="@{/js/webox.js}"></script>
+
+<!--link rel="stylesheet" th:href="@{/css/box.css}" /-->
+
+<script th:src="@{/js/table/datatables.js}"></script>
+<link rel="stylesheet" th:href="@{/css/table/datatables.css}" />
+
+</head>
+<body>
+	<!-- Body -->
+	<div class="wrapper">
+		<header th:replace="layout :: site-header" />
+
+		<!-- START MAIN CONTAINER -->
+		<section>
+			<div class="content-wrapper">
+				<div class="container-fluid ">
+					<div class="row">
+						<div class="col-lg-12">
+							<fieldset class="well ">
+								<legend class="well-legend secondary-fieldset">
+									<span>Inserisci Affinit&agrave;</span>
+								</legend>
+								<div class="row">
+									<div class="col-lg-2">
+										<label class="form-group"><strong>Numero
+												Parole</strong> <input class="form-control numeric" name="np" id="np"
+											type="number" value="10" min="1" max="99" maxlength="2" /> </label>
+									</div>
+									<div class="col-lg-7">
+										<div class="row">
+											<div class="col-lg-11">
+												<label class="form-group"><strong>Parole
+														(separate da <i>,</i> )
+												</strong> <input class="form-control" type="text" name="text"
+													id="text" placeholder="parola1, parola2,..." size="100" />
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3">
+										<div class="row">
+											<a
+												class=" btn btn-primary btn-trasparent btn-sm suggest_an move-down suggest"
+												id="button_suggest_dist" title="Suggerisci"> <i
+												class="fa fa-lightbulb-o fa-2x" aria-hidden="true"></i>
+											</a>
+											<button class="btn btn-primary move-down btn-sm" id="button">
+												<i class="fa fa-paper-plane-o"></i>&nbsp; Invia
+											</button>
+											&nbsp;
+											<button class="btn btn-secondary move-down  btn-sm"
+												id="btn_cancella_dist">
+												<i class="fa fa-eraser"></i> &nbsp;Ripulisci
+											</button>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<fieldset class="well ">
+								<legend class="well-legend secondary-fieldset">
+									<span>Lista Affinit&agrave;</span>
+								</legend>
+								<div id="resp"></div>
+							</fieldset>
+						</div>
+						<div class="col-lg-1"></div>
+						<div class="col-lg-5">
+							<fieldset class="well ">
+								<legend class="well-legend secondary-fieldset">
+									<span>Affinit&agrave; - Come fare...</span>
+								</legend>
+								<div>
+									<h4 class="suggest">Trova i vicini</h4>
+									<p>
+										Inserisci una o pi&ugrave; parole, o seleziona il suggerimento
+										<i class="fa fa-lightbulb-o fa-1x" aria-hidden="true"></i>, e
+										premi il tasto <i>Invia</i> <i class="fa fa-paper-plane-o"></i>.<br />
+										Verr&agrave; visualizzata la lista delle Affinit&agrave;
+										trovate.
+									</p>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END MAIN CONTAINER -->
+		<footer th:replace="layout :: site-footer" />
+	</div>
+
+
+	<!-- wrapper -->
+</body>
+</html>
